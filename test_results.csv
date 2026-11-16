@@ -1,0 +1,11 @@
+﻿type,question,verdict,best_score,seconds,detail
+IN,What are the minimum and maximum age to join Atal Pension Yojana?,PASS,0.744,25.4,abstained=False facts_found=True scheme_in_sources=True
+IN,What are the loan categories under Pradhan Mantri Mudra Yojana?,PASS,0.744,36.8,abstained=False facts_found=True scheme_in_sources=True
+IN,How much scholarship per year does the National Means-cum-Merit Scholarship Scheme give?,PASS,0.761,29.7,abstained=False facts_found=True scheme_in_sources=True
+IN,What is the yearly premium under Pradhan Mantri Jeevan Jyoti Bima Yojana?,PASS,0.723,29.5,abstained=False facts_found=True scheme_in_sources=True
+IN,Is a minimum balance required in a Basic Savings Bank Deposit Account under Pradhan Mantri Jan Dhan Yojana?,PASS,0.767,33.2,abstained=False facts_found=True scheme_in_sources=True
+NOT,What is the eligibility for Sukanya Samriddhi Yojana?,PASS,0.61,0.6,abstained=True (should be True)
+NOT,What loan amount does the Stand-Up India scheme offer?,PASS,0.636,25.7,abstained=True (should be True)
+NOT,What is the health insurance cover under Ayushman Bharat PM-JAY?,CHECK,0.702,29.5,abstained=False (should be True)
+NOT,How much subsidy is given for rooftop solar under PM Surya Ghar Muft Bijli Yojana?,CHECK,0.817,50.1,abstained=False (should be True)
+NOT,How much monthly assistance does the Gruha Lakshmi scheme give to women?,CHECK,0.761,26.8,abstained=False (should be True)

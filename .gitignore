@@ -1,0 +1,10 @@
+.env
+data/
+myscheme_data/
+.venv*/
+__pycache__/
+*.pyc
+.vscode/
+ERROR_LOG.txt
+answer_run*.txt
+*.zip

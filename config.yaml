@@ -1,0 +1,75 @@
+# Local Multilingual RAG Assistant for Government Schemes
+# Configuration file - all settings here, not in code
+
+# Embedding model (sentence-transformers)
+embedding:
+  model_name: "BAAI/bge-m3"
+  device: "cpu"  # or "cuda" if GPU available
+  batch_size: 32
+  normalize_embeddings: true
+
+# FAISS index
+index:
+  index_path: "data/index/faiss.index"
+  chunks_path: "data/index/chunks.json"
+  index_type: "flat"  # flat, ivf, hnsw
+
+# Retrieval
+retrieval:
+  top_k: 8
+  score_threshold: 0.35  # cosine similarity threshold for "not found"
+  max_context_chars: 4000  # max chars to send to LLM
+
+answer:
+  default_detail: brief
+  focus_gap: 0.02
+  brief:
+    expand_scheme_sections: false
+    max_words: 100
+    num_predict: 300
+  detailed:
+    expand_scheme_sections: true
+    max_words: 220
+    num_predict: 500
+    max_context_chars: 6000
+    expand_top_schemes: 1
+
+# LLM Providers
+llm:
+  # Local provider (Ollama)
+  local:
+    provider: "ollama"
+    model: "qwen3:4b-instruct-2507-q4_K_M"
+    temperature: 0.1
+    num_predict: 300
+    num_ctx: 4096
+    num_gpu: 0
+    num_thread: 4
+    think: null
+  
+  # Cloud provider (Groq)
+  groq:
+    provider: "groq"
+    base_url: "https://api.groq.com/openai/v1"
+    model: "openai/gpt-oss-20b"
+    temperature: 0.1
+    reasoning_effort: "low"
+    max_tokens: 2048
+    # API key from env: GROQ_API_KEY
+
+# Default provider: "local" or "groq"
+default_provider: "local"
+
+# Streamlit UI
+ui:
+  title: "Government Schemes RAG Assistant"
+  languages: ["English", "Hindi"]
+  show_citations: true
+  show_confidence: true
+
+# Evaluation
+evaluation:
+  eval_candidates_path: "data/eval_candidates.json"
+  recall_k: 5
+  mrr_k: 10
+

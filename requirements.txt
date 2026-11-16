@@ -1,0 +1,17 @@
+# Core dependencies
+sentence-transformers>=3.0.0
+faiss-cpu>=1.8.0
+numpy>=1.24.0
+pyyaml>=6.0
+tqdm>=4.66.0
+
+# LLM providers
+openai>=1.30.0
+ollama>=0.6.3
+python-dotenv>=1.0.0
+
+# Streamlit UI
+streamlit>=1.30.0
+
+# Evaluation
+# (uses only stdlib + above)
