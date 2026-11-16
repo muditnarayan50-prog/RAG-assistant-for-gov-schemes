@@ -29,6 +29,23 @@ flowchart TD
 5. **Generate locally or in the cloud:** `llm.py` uses Ollama by default. Groq is optional; cloud mode sends the question and retrieved context to Groq.
 6. **Use and evaluate:** `app.py` provides the Streamlit chat UI. `evaluate.py` measures retrieval and answer behavior on the evaluation candidates.
 
+## Quick start (no GPU needed)
+
+The prebuilt search index is not in this repo because of its size. Download it first:
+
+1. Download `gov-schemes-data.zip` from [Google Drive] https://drive.google.com/file/d/1rWJnjgJ32cNJHfxtQvvd722taMiqZz9r/view?usp=sharing.
+2. Unzip it inside the project folder so you end up with `data/index/faiss.index` and `data/index/chunks.json`.
+
+Then:
+
+```bash
+pip install -r requirements.txt
+ollama pull qwen3:4b-instruct-2507-q4_K_M
+streamlit run app.py
+```
+
+The first run also downloads the `BAAI/bge-m3` embedding model (about 2 GB). Rebuilding the index from scratch (see below) needs a CUDA GPU, and the raw myScheme data is not in this repo.
+
 ## Run locally
 
 Install dependencies in a Python environment:
